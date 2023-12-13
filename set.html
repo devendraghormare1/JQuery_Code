@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set in JavaScript</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let mySet = new Set();
+
+        mySet.add('value1');
+        mySet.add('value2');
+        mySet.add('value3');
+        mySet.add('value1');
+
+        console.log(mySet.has('value2'));  // Output true
+
+        mySet.delete("value3");
+
+       
+
+        mySet.forEach(value => {   // Iterate over the set
+            console.log(value);
+        });
+    </script>
+</body>
+</html>

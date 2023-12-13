@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box1").html("Hello world!");
+            })
+        })
+    </script> -->
+
+    <!-- Hide Button Script -->
+
+    <script>
+        $(document).ready(function () {
+            $(".hideBtn").click(function () {
+                $("div").hide(1000);
+            });
+
+
+            $(".showBtn").click(function () {
+                $("div").show(1000);
+            });
+
+            $(".toggleBtn").click(function () {
+                $("div").toggle(1000);
+
+            })
+            $(".slideBtn").click(function(){
+                $("div").slideUp(500);
+                $("div").slideDown(500);
+            })
+            $(".fadeBtn").click(function(){
+                $("div").fadeIn(2000)
+            })
+        });
+    </script>
+
+    
+</head>
+
+<body>
+    <!-- <div>
+        <input type="button" value="click here" id="btn1" style="width: 100px;height: 150px;background: lightcoral;">
+        <div id="box1"
+            style="height: 80px;width: 100px;background: lightgreen;border: 1px solid;text-align: center;line-height: 80px;">
+        </div>
+
+    </div> -->
+
+
+    <!-- Hide Functions -->
+
+
+    <div
+        style="background-color: lightgreen; height: 500px; width: 500px; border: 1px solid; line-height:500px; text-align: center; ">
+        Hide and Show - Speed</div>
+    <button class="hideBtn" style="padding: 10px; width:100px; background: lightgrey;">Hide</button>
+    <button class="showBtn" style="padding: 10px; width: 100px; background: lightgrey;">Show</button>
+    <button class="toggleBtn" style="padding: 10px; width: 100px; background: lightgrey;">Toggle</button>
+    <button class="slideBtn" style="padding: 10px; width: 100px; background: lightgrey;">slide</button>
+    <button class="fadeBtn" style="padding: 10px; width: 100px; background: lightgrey;">Fade</button>
+</body>
+
+</html>

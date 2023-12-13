@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Use <code>addEventListener</code> to add an event listener</h2>
+    <p id="element">Bring mouse over me</p>
+    <button onclick="addEvent()" id="btn">Add Event</button>
+    <p>pass <kbd>F12</kbd> to see the created element</p>
+</body>
+<script>
+    const element = document.getElementById("element");
+    const btn = document.getElementById("btn")
+
+    function addEvent(){
+        element.addEventListener('mouseover', function(){
+            alert("Mouse is over me!");
+        });
+
+        btn.addEventListener('click', function(){
+            alert("You click the button")
+        })
+    }
+</script>
+</html>

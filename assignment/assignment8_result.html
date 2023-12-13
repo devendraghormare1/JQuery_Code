@@ -1,0 +1,51 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Selected Location Information</h2>
+
+    <div id="result-container">
+        <p id="country-result">Country: </p>
+        <p id="state-result">State: </p>
+        <p id="city-result">City: </p>
+    </div>
+
+    <script>
+       
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var country = getParameterByName('country');
+        var state = getParameterByName('state');
+        var city = getParameterByName('city');
+
+      
+        document.getElementById('country-result').innerText += country;
+        document.getElementById('state-result').innerText += state;
+        document.getElementById('city-result').innerText += city;
+    </script>
+</body>
+
+</html>

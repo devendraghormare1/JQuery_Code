@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Child</title>
+</head>
+<body>
+    <div id="parent">
+        <p>This is first child.</p>
+    </div>
+    <button onclick="addChild()">Add Child</button>
+
+    <script>
+
+        function addChild(){
+            const  parent = document.getElementById("parent");
+            const child = document.createElement("p");
+    
+            child.innerHTML="This is second child";
+    
+             parent.append(child);
+        }
+    </script>
+</body>
+
+
+</html>

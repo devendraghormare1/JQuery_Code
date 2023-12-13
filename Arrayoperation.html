@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array_Operation</title>
+    <script>
+        const Colors=['Blue', 'Orange', 'Red', 'Green']
+        //Accessing array element
+        console.log("Colors are: "+ Colors);
+        const Mycolor = Colors[1];
+        console.log(Mycolor);
+        // Adding new element in array
+        Colors.push("Black");
+        console.log("After Adding: " + Colors);
+        // Removing last element from array
+        Colors.pop();
+        console.log("After removing: "+ Colors);
+        // Removing first element from array
+        Colors.shift();
+        console.log("Shift Operation: "+ Colors);
+        // Removing element by index
+        const index = Colors.slice(1,2);
+        console.log("After slicing: "+ index)
+
+        Colors.splice(3);
+        console.log("After splice: "+ Colors);
+        // Array filtering 
+        const myFilter = Colors.filter(Colors => Colors.length>3)
+        console.log("After filtering: "+ myFilter)
+        //Array mapping to lowecase
+        const arrayMap = Colors.map(Colors=>Colors.toLowerCase());
+        console.log("After mapping: "+arrayMap);
+         //Array mapping to Uppercased
+        const arrayMap1 = Colors.map(Colors=>Colors.toUpperCase());
+        console.log("After mapping: "+arrayMap1);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

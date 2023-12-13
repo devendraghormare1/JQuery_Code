@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Child</title>
+</head>
+<body>
+    <div id="parent">
+        <p id="child">This is first child.</p>
+    </div>
+    <button onclick="remove()">Remove </button>
+    <button onclick="replace()">Peplace </button>
+
+    <script>
+
+        function remove(){
+            const  parent = document.getElementById("parent"); // selecting the parent 
+            const child = document.createElement("p"); // creating a new element
+    
+            parent.remove(child);
+        }
+        function replace(){
+            const  parent = document.getElementById("parent");
+            const child = document.getElementById("child");
+            const newChild = document.createElement("h2");
+            
+            newChild.innerHTML = "I am new child";
+             parent.replaceChild(newChild,child);
+        }
+    </script>
+</body>
+
+
+</html>

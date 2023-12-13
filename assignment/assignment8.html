@@ -1,0 +1,128 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country, State, City Dropdown</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #country,
+        #state,
+        #city {
+            padding: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: bisque;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        #submit {
+            padding: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: lightgrey;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            background-color: lightcyan;
+            border: 400px groove white;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <form id="locationForm" action="result.html" method="post">
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="">Select Country</option>
+
+
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+
+
+
+            </select>
+
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="">Select State</option>
+
+            </select>
+
+            <label for="city">City:</label>
+            <select id="city" name="city">
+                <option value="">Select City</option>
+
+            </select><br>
+
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </fieldset>
+    <script>
+        $(document).ready(function () {
+
+            var countryData = {
+                "usa": {
+                    "ny": ["New York", "Albany"],
+                    "ca": ["Los Angeles", "San Francisco"]
+                },
+                "india": {
+                    "Maharastra": ["Nagpur", "Pune"],
+                    "Madhya Pradesh": ["chhindwada", "Jabalpur"]
+                }
+            };
+
+            $("#country").on("change", function () {
+                var selectedCountry = $(this).val();
+                var states = countryData[selectedCountry];
+
+                $("#state").html('<option value="">Select State</option>');
+                $.each(states, function (key, value) {
+                    $("#state").append('<option value="' + key + '">' + key + '</option>');
+                });
+
+                $("#city").html('<option value="">Select City</option>').hide();
+            });
+
+            $("#state").on("change", function () {
+                var selectedCountry = $("#country").val();
+                var selectedState = $(this).val();
+                var cities = countryData[selectedCountry][selectedState];
+
+                $("#city").html('<option value="">Select City</option>');
+                $.each(cities, function (index, value) {
+                    $("#city").append('<option value="' + value + '">' + value + '</option>');
+                });
+
+                $("#city").show();
+            });
+
+
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+
+    
+                var selectedCountry = $("#country").val();
+                var selectedState = $("#state").val();
+                var selectedCity = $("#city").val();
+
+             
+                var url = "assignment8_result.html?" +
+                    "country=" + encodeURIComponent(selectedCountry) +
+                    "&state=" + encodeURIComponent(selectedState) +
+                    "&city=" + encodeURIComponent(selectedCity);
+
+                window.open(url, "_blank");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

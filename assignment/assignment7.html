@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Images</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.draggable-image').draggable({
+        helper: 'clone',
+        revert: 'invalid'
+      });
+
+      $('#drop-box').droppable({
+        accept: '.draggable-image',
+        drop: function(event, ui) {
+          var droppedImage = ui.helper.clone();
+          droppedImage.removeClass('ui-draggable-dragging');
+          droppedImage.appendTo($(this));
+          $(".img_1").hide();
+        }
+      });
+    });
+  </script>
+  <style>
+    #image-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .draggable-image {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      cursor: move;
+    }
+
+    #drop-box {
+      border: 2px solid black;
+      background-color: lightcoral;
+      padding: 200px;
+      margin: 200px 0;
+    }
+  </style>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+  <div id="image-container">
+    <img src="/assignment/img1.jpg" alt="Image 1" class="draggable-image">
+    <img src="/assignment/img4.jpg" alt="Image 2" class="draggable-image">
+    <img src="/assignment/img1.jpg" alt="Image 3" class="draggable-image">
+  </div>
+
+  <div id="drop-box"></div>
+
+  
+</body>
+</html>

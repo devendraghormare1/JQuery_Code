@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#sel").change(function () {
+                var value = $("#sel option:selected").val();
+                alert("You selected:  "+ value);
+            });
+
+        })
+
+    </script>
+
+
+    <!-- Color Change  -->
+    <script>
+         $(document).ready(function () {
+            $("#select").change(function(){
+                var value = $("#select option:selected").val();
+                // alert("You selected:  "+ value);
+                $("body").css("background-color",value);
+            });
+         })
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <label for="city" id="city">City: </label>
+        <select name="city" id="sel">
+          <option value="">Select</option>
+            <option value="paris" id="paris">Paris</option>
+            <option value="London" id="london">London</option>
+            <option value="New York" id="NY">New York</option>
+        </select>
+    </div>
+<div>
+    <label for="color" id="color">Color: </label>
+        <select name="color" id="select">
+          <option value="">Select</option>
+            <option value="red" id="red">Red</option>
+            <option value="blue" id="blue">Blue</option>
+            <option value="green" id="green">Green</option>
+        </select>
+    </div>
+</body>
+
+</html>

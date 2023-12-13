@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoveAtrribute</title>
+</head>
+<body>
+    <p id="element" title="This is a title">Lorem ipsum dolor sit amet.</p>
+    <button onclick="removeTitle()">Remove</button>
+</body>
+
+<script>
+    const element = document.getElementById("element");
+
+    function removeTitle(){
+        element.removeAttribute("title");
+    }
+</script>
+</html>
